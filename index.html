@@ -18,33 +18,37 @@
 
 <body>
   <main id="container">
+
     <aside id="bio-container">
       <h2>Albert Silva de Jesus</h2>
-      <img src="img/profile.png" alt="Albert Silva de Jesus">
+      <img id="bio-image" src="img/profile.png" alt="Albert Silva de Jesus">
       <p>Olá, meu nome é Albert Silva de Jesus e sou <span class="highlight">Desenvolvedor FullStack</span></p>
       <p id="welcome-text">Seja bem vindo!</p>
+      <ul id="social-container">
+        <li><a href="#" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li><a href="#" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li><a href="#" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></li>
+      </ul>
+      <div id="email-container">
+        <ion-icon name="mail-outline"></ion-icon><a
+          href="mailto:albertinesilva.17@gmail.com">albertinesilva.17@gmail.com</a>
+      </div>
     </aside>
-    <ul id="social-container">
-      <li><a href="#" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></li>
-      <li><a href="#" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-      <li><a href="#" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></li>
-    </ul>
-    <div id="email-container">
-      <ion-icon name="mail-outline"></ion-icon><a
-        href="mailto:albertinesilva.17@gmail.com">albertinesilva.17@gmail.com</a>
-    </div>
+
     <section id="about-container">
+
       <h1 id="name">Albert Silva de Jesus</h1>
       <p id="title"><span class="highlight"></span>Desenvolvedor FullStack</p>
       <p class="description">Sou um Desenvolvedor especializado em desenvolver sistemas, gosto de participar do projeto
         desde a <span class="highlight">definição de regras de negócio e levantamento de requisito</span> até o <span
           class="highlight"></span>deploy da aplicação</p>
-      <p class="description">Atuo tanto no <span class="highlight">front</span>como no <span
+      <p class="description">Atuo tanto no <span class="highlight">front</span> como no <span
           class="highlight">back-end</span>, e amo tecnologia, estudo todos os dias para me tornar cada vez melhor e
         escrever código de qualidade.</p>
       <a href="#" id="btn-projects"><ion-icon name="share-social-outline"></ion-icon><span>Ver Projetos</span></a>
       <h2 id="skills-section-title">Minhas Skills</h2>
       <p class="description">Conheça as tecnologias que domino:</p>
+
       <div id="skills-container">
         <div class="skills-box">
           <p class="skills-title">Front-end</p>
@@ -54,54 +58,63 @@
           <i class="devicon-typescript-plain colored"></i>
           <i class="devicon-thymeleaf-plain colored"></i>
         </div>
+
         <div class="skills-box">
           <p class="skills-title">Back-end</p>
           <i class="devicon-c-plain colored"></i>
           <i class="devicon-cplusplus-plain colored"></i>
           <i class="devicon-java-plain colored"></i>
-          <i class="devicon-spring-plain colored"></i>
         </div>
+
         <div class="skills-box">
           <p class="skills-title">Databases</p>
           <i class="devicon-postgresql-plain colored"></i>
           <i class="devicon-mongodb-plain colored"></i>
           <i class="devicon-mysql-plain colored"></i>
         </div>
+
         <div class="skills-box">
           <p class="skills-title">Front-end Frameworks</p>
           <i class="devicon-bootstrap-plain colored"></i>
           <i class="devicon-angularjs-plain colored"></i>
           <i class="devicon-react-plain colored"></i>
           <i class="devicon-thymeleaf-plain colored"></i>
-          <img src="https://www.thymeleaf.org/images/thymeleaf.png" alt="Thymeleaf" width="15">
+          <img class="icon-img" src="https://www.thymeleaf.org/images/thymeleaf.png" alt="Thymeleaf">
         </div>
+
+        <div class="skills-box">
+          <p class="skills-title">Back-end Frameworks</p>
+          <i class="devicon-spring-plain colored"></i>
+        </div>
+
         <div class="skills-box">
           <p class="skills-title">Tools</p>
           <i class="devicon-windows11-original colored"></i>
           <i class="devicon-docker-plain colored"></i>
         </div>
+
         <div class="skills-box">
           <p class="skills-title">Ferramentas</p>
           <i class="devicon-heroku-plain-wordmark colored"></i>
           <i class="devicon-insomnia-plain colored"></i>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg"
-            width="15" />
+          <img class="icon-img"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" width="15" />
           <i class="devicon-intellij-plain colored"></i>
           <i class="devicon-json-plain colored"></i>
           <i class="devicon-junit-plain colored"></i>
           <i class="devicon-markdown-original colored"></i>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"
-            width="15" />
+          <img class="icon-img"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" width="15" />
           <i class="devicon-postman-plain colored"></i>
           <i class="devicon-vscode-plain colored"></i>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" width="15" />
+          <img class="icon-img"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" width="15" />
           <i class="devicon-git-plain colored"></i>
           <i class="devicon-github-original colored"></i>
         </div>
       </div>
     </section>
   </main>
-
   <!-- Ion Icons-->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
