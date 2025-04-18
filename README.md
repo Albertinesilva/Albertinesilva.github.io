@@ -11,9 +11,9 @@
 
 📬 **Contato e redes:**
 
-| 🌎 **LinkedIn**                                                                 | 📧 **E-mail**                        |
-| ------------------------------------------------------------------------------ | ------------------------------------ |
-| [Albert Silva](https://www.linkedin.com/in/albert-backend-java-spring-boot/)   | [Gmail](albertinesilva.17@gmail.com)             |
+| 🌎 **LinkedIn**                                                                 | 📧 **E-mail**                                                            |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| [Albert Silva](https://www.linkedin.com/in/albert-backend-java-spring-boot/)   | [albertinesilva.17@gmail.com](mailto:albertinesilva.17@gmail.com)       |
 
 ---
 
