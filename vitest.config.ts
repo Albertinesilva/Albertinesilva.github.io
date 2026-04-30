@@ -4,7 +4,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/Albertinesilva.github.io/",
+  base: "/",
   test: {
     environment: "jsdom",
     globals: true,
