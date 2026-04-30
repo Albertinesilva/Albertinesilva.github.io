@@ -5,7 +5,7 @@
 
 ---
 
-🔗 **Acesse o site:** [albertinesilva.github.io](https://albertinesilva.github.io)
+🌐 **Portfólio:** [Visite meu portfólio online](https://albertinesilva.github.io)
 
 ---
 
