@@ -79,7 +79,7 @@ export const Hero = () => {
               />
             </div>
             <div className="absolute -bottom-3 -right-3 font-mono text-xs px-3 py-1.5 rounded-full bg-card border border-primary/40 text-primary shadow-card">
-              {"{ available: true }"}
+              {'{ status: "open to work" }'}
             </div>
           </div>
         </div>

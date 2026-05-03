@@ -38,23 +38,23 @@ export const Contact = () => {
       <div className="container relative z-10">
         <SectionHeader index="07" title="Contato" subtitle="// vamos conversar?" />
 
-        <div className="max-w-3xl">
-          <p className="text-lg text-muted-foreground mb-8">
+        <div className="w-full">
+          <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
             Estou aberto a oportunidades como{" "}
             <span className="text-primary font-medium">Desenvolvedor Backend Java</span>. Se você
             tem uma vaga ou projeto, vamos conversar — adoraria contribuir com seu time.
           </p>
 
-          <div className="grid sm:grid-cols-2 gap-4 mb-8">
+          <div className="flex flex-nowrap gap-4 mb-8 overflow-x-auto">
             {items.map((it) => (
               <a
                 key={it.label}
                 href={it.href}
                 target={it.href.startsWith("http") ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 bg-card-gradient border border-border rounded-xl p-5 hover-glow transition-smooth shadow-card"
+                className="flex-1 min-w-[180px] flex items-center gap-3 bg-card-gradient border border-border rounded-xl p-4 hover-glow transition-smooth shadow-card"
               >
-                <div className="p-3 rounded-lg bg-primary/10 border border-primary/30">
+                <div className="p-3 rounded-lg bg-primary/10 border border-primary/30 shrink-0">
                   <it.icon className="h-5 w-5 text-primary" />
                 </div>
                 <div className="min-w-0">
@@ -65,20 +65,20 @@ export const Contact = () => {
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center gap-4">
-            <Button asChild size="lg" className="gap-2 glow-primary">
+          <div className="flex flex-nowrap items-center gap-4 overflow-x-auto mb-10">
+            <Button asChild size="lg" className="gap-2 glow-primary shrink-0">
               <a href={`mailto:${profile.email}`}>
                 <Mail className="h-4 w-4" />
                 Enviar email
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="gap-2 hover-glow">
+            <Button asChild size="lg" variant="outline" className="gap-2 hover-glow shrink-0">
               <a href={`https://wa.me/${profile.whatsapp}`} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="h-4 w-4" />
                 Chamar no WhatsApp
               </a>
             </Button>
-            <span className="flex items-center gap-2 text-sm text-muted-foreground">
+            <span className="flex items-center gap-2 text-sm text-muted-foreground shrink-0">
               <MapPin className="h-4 w-4 text-accent" />
               {profile.location}
             </span>

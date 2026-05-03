@@ -1,4 +1,4 @@
-import { Github, ExternalLink, Star, Lock } from "lucide-react";
+import { Github, ExternalLink, Star, Lock, Globe } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { projects } from "@/data/portfolio";
 import { SectionHeader } from "./SectionHeader";
@@ -62,6 +62,15 @@ export const Projects = () => {
                 <span className="inline-flex items-center gap-1.5 text-sm text-muted-foreground font-mono">
                   Código não disponível
                 </span>
+              ) : p.hasDeploy ? (
+                <a
+                  href={p.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm text-accent hover:text-primary-glow font-mono"
+                >
+                  <Globe className="h-3.5 w-3.5" /> Acessar projeto <ExternalLink className="h-3.5 w-3.5" />
+                </a>
               ) : (
                 <a
                   href={p.github}

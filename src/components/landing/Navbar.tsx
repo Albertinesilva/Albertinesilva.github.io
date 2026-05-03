@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/portfolio";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { href: "#sobre", label: "Sobre" },
@@ -54,15 +55,19 @@ export const Navbar = () => {
               Baixar CV
             </a>
           </Button>
+          <ThemeToggle />
         </div>
 
-        <button
-          className="lg:hidden p-2 text-foreground"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Menu"
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-3 lg:hidden">
+          <ThemeToggle />
+          <button
+            className="p-2 text-foreground"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Menu"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </nav>
 
       {open && (

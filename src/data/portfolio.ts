@@ -118,6 +118,7 @@ export const projects = [
     stack: ["Java", "Spring Boot", "Spring MVC", "Thymeleaf", "PostgreSQL", "Heroku"],
     github: "https://github.com/Albertinesilva/cad-mototaxista-technical-documentation",
     featured: true,
+    hasDeploy: true,
   },
   {
     title: "Portal Agro Familiar",
@@ -151,6 +152,7 @@ export const projects = [
     stack: ["Java", "Spring Boot", "React", "TypeScript", "PostgreSQL", "Bootstrap", "Heroku", "Netlify"],
     github: "https://github.com/Albertinesilva/dsmovie",
     featured: true,
+    hasDeploy: true,
   },
   {
     title: "Clínica — Spring Security & Thymeleaf",
@@ -159,6 +161,7 @@ export const projects = [
     stack: ["Java", "Spring Boot", "Spring Security", "Spring MVC", "Thymeleaf", "JPA", "MySQL", "Heroku"],
     github: "https://github.com/Albertinesilva/appointment-scheduling-spring-security",
     featured: true,
+    hasDeploy: true,
   },
 ];
 
@@ -225,7 +228,7 @@ export const education = {
   institution: "IFBA — Instituto Federal de Educação, Ciência e Tecnologia da Bahia",
   conclusion: "Concluído em Março/2026",
   status: "Formado",
-  tcc: "TCC: Sistema CAD-MOTOTAXISTA — aplicação web para gestão de mototaxistas (repositório e documentação técnica disponíveis no GitHub).",
+  tcc: "TCC: Sistema CAD-MOTOTAXISTA — aplicação web desenvolvida para a gestão de mototaxistas, com repositório, documentação técnica completa e ambiente de produção disponíveis no GitHub.",
   tccLink: "https://github.com/Albertinesilva/cad-mototaxista-technical-documentation",
   tccLinkLabel: "Ver documentação no GitHub",
 };
