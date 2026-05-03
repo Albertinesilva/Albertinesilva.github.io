@@ -5,7 +5,7 @@ export const About = () => {
   return (
     <section id="sobre" className="py-24 relative">
       <div className="container">
-        <SectionHeader index="01" title="Sobre mim" />
+        <SectionHeader index="01" title="Sobre" />
 
         <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 items-start">
           <div className="space-y-5 text-muted-foreground leading-relaxed text-base sm:text-lg">
