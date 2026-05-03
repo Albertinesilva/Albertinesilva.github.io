@@ -63,7 +63,7 @@ export const LocationMap = () => {
     <div className="bg-card-gradient border border-border rounded-xl p-2 hover-glow transition-smooth shadow-card overflow-hidden">
       <div
         ref={containerRef}
-        className="w-full h-[500px] rounded-lg overflow-hidden map-themed"
+        className="w-full h-[320px] rounded-lg overflow-hidden map-themed"
         aria-label="Mapa de Santo Antônio de Jesus - BA"
       />
     </div>
