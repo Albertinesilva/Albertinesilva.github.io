@@ -12,6 +12,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { skills } from "@/data/portfolio";
 import { SectionHeader } from "./SectionHeader";
+import { useLanguage, type TranslationKey } from "@/hooks/use-language";
 
 const iconFor = (cat: string) => {
   if (cat.includes("Backend")) return Code2;
@@ -85,10 +86,11 @@ const deviconMap: Record<string, string> = {
 };
 
 export const Skills = () => {
+  const { t } = useLanguage();
   return (
     <section id="skills" className="py-24 bg-secondary/20">
       <div className="container">
-        <SectionHeader index="04" title="Skills" subtitle="// stack técnica" />
+        <SectionHeader index="04" title={t("skills.title")} subtitle={t("skills.subtitle")} />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {skills.map((group) => {
@@ -102,7 +104,9 @@ export const Skills = () => {
                   <div className="p-2 rounded-lg bg-primary/10 border border-primary/30">
                     <Icon className="h-5 w-5 text-primary" />
                   </div>
-                  <h3 className="font-semibold">{group.category}</h3>
+                  <h3 className="font-semibold">
+                    {t(`skills.cat.${group.category}` as TranslationKey)}
+                  </h3>
                 </div>
 
                 <div className="flex flex-wrap gap-1.5">

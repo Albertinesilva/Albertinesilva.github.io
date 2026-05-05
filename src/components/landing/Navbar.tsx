@@ -3,20 +3,23 @@ import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/portfolio";
 import { ThemeToggle } from "./ThemeToggle";
-
-const links = [
-  { href: "#sobre", label: "Sobre" },
-  { href: "#experiencia", label: "Experiência" },
-  { href: "#projetos", label: "Projetos" },
-  { href: "#skills", label: "Skills" },
-  { href: "#formacao", label: "Formação" },
-  { href: "#certificados", label: "Certificados" },
-  { href: "#contato", label: "Contato" },
-];
+import { LanguageToggle } from "./LanguageToggle";
+import { useLanguage } from "@/hooks/use-language";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
+
+  const links = [
+    { href: "#sobre", label: t("nav.about") },
+    { href: "#experiencia", label: t("nav.experience") },
+    { href: "#projetos", label: t("nav.projects") },
+    { href: "#skills", label: t("nav.skills") },
+    { href: "#formacao", label: t("nav.education") },
+    { href: "#certificados", label: t("nav.certificates") },
+    { href: "#contato", label: t("nav.contact") },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -52,18 +55,22 @@ export const Navbar = () => {
           <Button asChild size="sm" className="gap-2">
             <a href={profile.cvPath} download>
               <Download className="h-4 w-4" />
-              Baixar CV
+              {t("nav.downloadCv")}
             </a>
           </Button>
-          <ThemeToggle />
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <LanguageToggle />
+          </div>
         </div>
 
-        <div className="flex items-center gap-3 lg:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <ThemeToggle />
+          <LanguageToggle />
           <button
             className="p-2 text-foreground"
             onClick={() => setOpen((v) => !v)}
-            aria-label="Menu"
+            aria-label={t("nav.menu")}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -86,7 +93,7 @@ export const Navbar = () => {
             <Button asChild size="sm" className="gap-2 mt-2">
               <a href={profile.cvPath} download>
                 <Download className="h-4 w-4" />
-                Baixar CV
+                {t("nav.downloadCv")}
               </a>
             </Button>
           </div>

@@ -1,19 +1,23 @@
 import { Briefcase } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { experiences } from "@/data/portfolio";
+import { experiencesEn } from "@/data/portfolio-en";
 import { SectionHeader } from "./SectionHeader";
+import { useLanguage } from "@/hooks/use-language";
 
 export const Experience = () => {
+  const { t, language } = useLanguage();
+  const data = language === "en" ? experiencesEn : experiences;
   return (
     <section id="experiencia" className="py-24 bg-secondary/20">
       <div className="container">
-        <SectionHeader index="02" title="Experiência" subtitle="// trajetória profissional" />
+        <SectionHeader index="02" title={t("experience.title")} subtitle={t("experience.subtitle")} />
 
         <div className="relative">
           <div className="absolute left-4 sm:left-6 top-2 bottom-2 w-px bg-gradient-to-b from-primary via-accent to-transparent" />
 
           <div className="space-y-10">
-            {experiences.map((exp, i) => (
+            {data.map((exp, i) => (
               <div key={i} className="relative pl-12 sm:pl-16 animate-fade-up">
                 <div className="absolute left-0 sm:left-2 top-1 flex items-center justify-center w-8 h-8 rounded-full bg-card border border-primary/50 glow-primary">
                   <Briefcase className="h-4 w-4 text-primary" />

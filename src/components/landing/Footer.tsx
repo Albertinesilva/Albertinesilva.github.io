@@ -1,7 +1,9 @@
 import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
 import { profile } from "@/data/portfolio";
+import { useLanguage } from "@/hooks/use-language";
 
 export const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="border-t border-border py-8">
       <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -38,7 +40,7 @@ export const Footer = () => {
           </a>
           <a
             href="#top"
-            aria-label="Voltar ao topo"
+            aria-label={t("footer.backToTop")}
             className="ml-2 p-2 rounded-lg border border-border text-muted-foreground hover:text-primary hover-glow transition-smooth"
           >
             <ArrowUp className="h-4 w-4" />

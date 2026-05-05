@@ -1,9 +1,15 @@
 import { Download, Github, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/portfolio";
+import { profileEn } from "@/data/portfolio-en";
 import profileImg from "@/assets/profile.jpg";
+import { useLanguage } from "@/hooks/use-language";
 
 export const Hero = () => {
+  const { t, language } = useLanguage();
+  const role = language === "en" ? profileEn.role : profile.role;
+  const tagline = language === "en" ? profileEn.tagline : profile.tagline;
+  const location = language === "en" ? profileEn.location : profile.location;
   return (
     <section
       id="top"
@@ -14,7 +20,7 @@ export const Hero = () => {
       <div className="container grid lg:grid-cols-[1.3fr_1fr] gap-12 items-center relative z-10">
         <div className="animate-fade-up">
           <p className="font-mono text-primary mb-4 flex items-center gap-2">
-            <span>&gt; Olá, eu sou</span>
+            <span>{t("hero.greeting")}</span>
             <span className="animate-blink text-accent">_</span>
           </p>
 
@@ -23,26 +29,26 @@ export const Hero = () => {
           </h1>
 
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gradient mb-5">
-            {profile.role}
+            {role}
           </h2>
 
           <p className="text-base sm:text-lg text-muted-foreground max-w-xl mb-6">
-            {profile.tagline}
+            {tagline}
           </p>
 
           <p className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
             <MapPin className="h-4 w-4 text-primary" />
-            {profile.location}
+            {location}
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">
             <Button asChild size="lg" className="gap-2 glow-primary">
-              <a href="#projetos">Ver Projetos</a>
+              <a href="#projetos">{t("hero.viewProjects")}</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="gap-2 hover-glow">
               <a href={profile.cvPath} download>
                 <Download className="h-4 w-4" />
-                Baixar CV (PDF)
+                {t("hero.downloadCv")}
               </a>
             </Button>
           </div>

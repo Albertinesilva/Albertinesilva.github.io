@@ -1,16 +1,24 @@
 import { Github, ExternalLink, Star, Lock, Globe } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { projects } from "@/data/portfolio";
+import { projectsEn } from "@/data/portfolio-en";
 import { SectionHeader } from "./SectionHeader";
+import { useLanguage } from "@/hooks/use-language";
 
 export const Projects = () => {
+  const { t, language } = useLanguage();
+  const list = projects.map((p, i) =>
+    language === "en" && projectsEn[i]
+      ? { ...p, title: projectsEn[i].title, description: projectsEn[i].description }
+      : p,
+  );
   return (
     <section id="projetos" className="py-24">
       <div className="container">
-        <SectionHeader index="03" title="Projetos" subtitle="// projetos em destaque" />
+        <SectionHeader index="03" title={t("projects.title")} subtitle={t("projects.subtitle")} />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((p) => (
+          {list.map((p) => (
             <article
               key={p.title}
               className="group flex flex-col bg-card-gradient border border-border rounded-xl p-6 hover-glow transition-smooth shadow-card"
@@ -21,17 +29,17 @@ export const Projects = () => {
                 </div>
                 {p.isPrivate ? (
                   <span
-                    aria-label="Repositório privado"
+                    aria-label={t("projects.privateLabel")}
                     className="inline-flex items-center gap-1 text-xs font-mono text-muted-foreground border border-border rounded-md px-2 py-1"
                   >
-                    <Lock className="h-3.5 w-3.5" /> Privado
+                    <Lock className="h-3.5 w-3.5" /> {t("projects.private")}
                   </span>
                 ) : (
                   <a
                     href={p.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`GitHub de ${p.title}`}
+                    aria-label={`${t("projects.githubOf")} ${p.title}`}
                     className="text-muted-foreground hover:text-primary transition-smooth"
                   >
                     <Github className="h-5 w-5" />
@@ -60,7 +68,7 @@ export const Projects = () => {
 
               {p.isPrivate ? (
                 <span className="inline-flex items-center gap-1.5 text-sm text-muted-foreground font-mono">
-                  Código não disponível
+                  {t("projects.notAvailable")}
                 </span>
               ) : p.hasDeploy ? (
                 <a
@@ -69,7 +77,7 @@ export const Projects = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-sm text-accent hover:text-primary-glow font-mono"
                 >
-                  <Globe className="h-3.5 w-3.5" /> Acessar projeto <ExternalLink className="h-3.5 w-3.5" />
+                  <Globe className="h-3.5 w-3.5" /> {t("projects.access")} <ExternalLink className="h-3.5 w-3.5" />
                 </a>
               ) : (
                 <a
@@ -78,7 +86,7 @@ export const Projects = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-sm text-primary hover:text-primary-glow font-mono"
                 >
-                  Ver código <ExternalLink className="h-3.5 w-3.5" />
+                  {t("projects.viewCode")} <ExternalLink className="h-3.5 w-3.5" />
                 </a>
               )}
             </article>

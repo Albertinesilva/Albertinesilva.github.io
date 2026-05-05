@@ -1,20 +1,35 @@
 import { Award } from "lucide-react";
 import { certificates, languages } from "@/data/portfolio";
+import { certificatesEn } from "@/data/portfolio-en";
 import { SectionHeader } from "./SectionHeader";
+import { useLanguage } from "@/hooks/use-language";
 
 export const Certificates = () => {
+  const { t, language } = useLanguage();
+  const certList = language === "en" ? certificatesEn : certificates;
+
+  const langName = (name: string) =>
+    name === "Português"
+      ? t("language.pt")
+      : name === "Inglês"
+        ? t("language.en")
+        : name;
+
+  const langLevel = (level: string) =>
+    level === "Intermediário" ? t("language.level.intermediate") : level;
+
   return (
     <section id="certificados" className="py-24 bg-secondary/20">
       <div className="container">
         <SectionHeader
           index="06"
-          title="Certificados & Idiomas"
-          subtitle="// cursos e idiomas"
+          title={t("certificates.title")}
+          subtitle={t("certificates.subtitle")}
         />
 
         <div className="grid lg:grid-cols-[1.6fr_1fr] gap-8">
           <div className="grid sm:grid-cols-2 gap-4">
-            {certificates.map((c) => (
+            {certList.map((c) => (
               <div
                 key={c.name}
                 className="bg-card-gradient border border-border rounded-xl p-5 hover-glow transition-smooth shadow-card"
@@ -39,7 +54,7 @@ export const Certificates = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg mb-2">
               <span className="text-primary font-mono">{"{ "}</span>
-              Idiomas
+              {t("certificates.languagesTitle")}
               <span className="text-primary font-mono">{" }"}</span>
             </h3>
             {languages.map((l) => (
@@ -48,8 +63,8 @@ export const Certificates = () => {
                 className="bg-card-gradient border border-border rounded-xl p-5 shadow-card"
               >
                 <div className="flex justify-between items-center mb-2">
-                  <span className="font-semibold">{l.name}</span>
-                  <span className="font-mono text-xs text-primary">{l.level}</span>
+                  <span className="font-semibold">{langName(l.name)}</span>
+                  <span className="font-mono text-xs text-primary">{langLevel(l.level)}</span>
                 </div>
                 <div className="h-2 rounded-full bg-background overflow-hidden">
                   <div
