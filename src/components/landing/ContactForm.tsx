@@ -73,37 +73,31 @@ export const ContactForm = () => {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <Label htmlFor="contact-name">{t("contact.form.name")}</Label>
-            <Input
-              id="contact-name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder={t("contact.form.namePlaceholder")}
-              maxLength={100}
-              aria-invalid={!!errors.name}
-            />
-            {errors.name && (
-              <p className="text-xs text-destructive">{errors.name}</p>
-            )}
-          </div>
+        <div className="space-y-2">
+          <Label htmlFor="contact-name">{t("contact.form.name")}</Label>
+          <Input
+            id="contact-name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder={t("contact.form.namePlaceholder")}
+            maxLength={100}
+            aria-invalid={!!errors.name}
+          />
+          {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
+        </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="contact-email">{t("contact.form.email")}</Label>
-            <Input
-              id="contact-email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder={t("contact.form.emailPlaceholder")}
-              maxLength={255}
-              aria-invalid={!!errors.email}
-            />
-            {errors.email && (
-              <p className="text-xs text-destructive">{errors.email}</p>
-            )}
-          </div>
+        <div className="space-y-2">
+          <Label htmlFor="contact-email">{t("contact.form.email")}</Label>
+          <Input
+            id="contact-email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder={t("contact.form.emailPlaceholder")}
+            maxLength={255}
+            aria-invalid={!!errors.email}
+          />
+          {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
         </div>
 
         <div className="space-y-2">

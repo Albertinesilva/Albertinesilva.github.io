@@ -6,6 +6,7 @@ import { LocationMap } from "./LocationMap";
 import { useLanguage } from "@/hooks/use-language";
 import { profileEn } from "@/data/portfolio-en";
 import { ContactForm } from "./ContactForm";
+import { ContactFormWhatsapp } from "./ContactFormWhatsapp";
 
 export const Contact = () => {
   const { t, language } = useLanguage();
@@ -89,8 +90,9 @@ export const Contact = () => {
             </span>
           </div>
 
-          <div className="mt-4 mb-10">
+          <div className="mt-4 mb-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
             <ContactForm />
+            <ContactFormWhatsapp />
           </div>
 
           <div className="mt-10">
