@@ -20,7 +20,7 @@ export const About = () => {
   };
 
   return (
-    <section id="sobre" className="py-24 relative">
+    <section id="sobre" className="py-16 sm:py-24 relative">
       <div className="container">
         <SectionHeader index="01" title={t("about.title")} subtitle={t("about.subtitle")} />
 

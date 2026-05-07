@@ -88,23 +88,23 @@ const deviconMap: Record<string, string> = {
 export const Skills = () => {
   const { t } = useLanguage();
   return (
-    <section id="skills" className="py-24 bg-secondary/20">
+    <section id="skills" className="py-16 sm:py-24 bg-secondary/20">
       <div className="container">
         <SectionHeader index="04" title={t("skills.title")} subtitle={t("skills.subtitle")} />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {skills.map((group) => {
             const Icon = iconFor(group.category);
             return (
               <div
                 key={group.category}
-                className="bg-card-gradient border border-border rounded-xl p-6 hover-glow transition-smooth shadow-card"
+                className="bg-card-gradient border border-border rounded-xl p-4 sm:p-6 hover-glow transition-smooth shadow-card"
               >
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-3 sm:mb-4">
                   <div className="p-2 rounded-lg bg-primary/10 border border-primary/30">
                     <Icon className="h-5 w-5 text-primary" />
                   </div>
-                  <h3 className="font-semibold">
+                  <h3 className="font-semibold text-sm sm:text-base">
                     {t(`skills.cat.${group.category}` as TranslationKey)}
                   </h3>
                 </div>

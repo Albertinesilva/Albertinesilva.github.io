@@ -64,7 +64,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className="bg-card-gradient border border-border rounded-xl p-6 shadow-card">
+    <div className="bg-card-gradient border border-border rounded-xl p-4 sm:p-6 shadow-card">
       <div className="flex items-center gap-2 mb-5">
         <span className="font-mono text-sm text-primary">{">"}</span>
         <h3 className="font-mono text-sm text-muted-foreground">

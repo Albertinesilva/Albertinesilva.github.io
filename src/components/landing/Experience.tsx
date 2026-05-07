@@ -9,23 +9,23 @@ export const Experience = () => {
   const { t, language } = useLanguage();
   const data = language === "en" ? experiencesEn : experiences;
   return (
-    <section id="experiencia" className="py-24 bg-secondary/20">
+    <section id="experiencia" className="py-16 sm:py-24 bg-secondary/20">
       <div className="container">
         <SectionHeader index="02" title={t("experience.title")} subtitle={t("experience.subtitle")} />
 
         <div className="relative">
-          <div className="absolute left-4 sm:left-6 top-2 bottom-2 w-px bg-gradient-to-b from-primary via-accent to-transparent" />
+          <div className="absolute left-3 sm:left-6 top-2 bottom-2 w-px bg-gradient-to-b from-primary via-accent to-transparent" />
 
-          <div className="space-y-10">
+          <div className="space-y-6 sm:space-y-10">
             {data.map((exp, i) => (
-              <div key={i} className="relative pl-12 sm:pl-16 animate-fade-up">
-                <div className="absolute left-0 sm:left-2 top-1 flex items-center justify-center w-8 h-8 rounded-full bg-card border border-primary/50 glow-primary">
-                  <Briefcase className="h-4 w-4 text-primary" />
+              <div key={i} className="relative pl-10 sm:pl-16 animate-fade-up">
+                <div className="absolute left-0 sm:left-2 top-1 flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-card border border-primary/50 glow-primary">
+                  <Briefcase className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
                 </div>
 
-                <div className="bg-card-gradient border border-border rounded-xl p-6 hover-glow transition-smooth shadow-card">
+                <div className="bg-card-gradient border border-border rounded-xl p-4 sm:p-6 hover-glow transition-smooth shadow-card">
                   <p className="font-mono text-xs text-primary mb-2">{exp.period}</p>
-                  <h3 className="text-xl font-semibold">{exp.role}</h3>
+                  <h3 className="text-base sm:text-xl font-semibold">{exp.role}</h3>
                   <p className="text-accent text-sm mb-4">{exp.company}</p>
 
                   <ul className="space-y-1.5 text-sm text-muted-foreground mb-4">

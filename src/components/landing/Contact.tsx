@@ -39,52 +39,47 @@ export const Contact = () => {
   ];
 
   return (
-    <section id="contato" className="py-24 relative overflow-hidden">
+    <section id="contato" className="py-16 sm:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-hero opacity-60 pointer-events-none" />
       <div className="container relative z-10">
         <SectionHeader index="07" title={t("contact.title")} subtitle={t("contact.subtitle")} />
 
         <div className="w-full">
-          <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
+          <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-3xl">
             {t("contact.intro1")}{" "}
             <span className="text-primary font-medium">{t("contact.intro2")}</span>
             {t("contact.intro3")}
           </p>
 
-          <div className="flex flex-nowrap gap-4 mb-8 overflow-x-auto">
+          <div className="flex flex-wrap items-center gap-3 mb-6 sm:mb-8">
             {items.map((it) => (
               <a
                 key={it.label}
                 href={it.href}
                 target={it.href.startsWith("http") ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                className="flex-1 min-w-[180px] flex items-center gap-3 bg-card-gradient border border-border rounded-xl p-4 hover-glow transition-smooth shadow-card"
+                aria-label={it.label}
+                className="p-3 rounded-xl bg-card-gradient border border-border hover-glow transition-smooth shadow-card text-muted-foreground hover:text-primary"
               >
-                <div className="p-3 rounded-lg bg-primary/10 border border-primary/30 shrink-0">
-                  <it.icon className="h-5 w-5 text-primary" />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-xs font-mono text-muted-foreground">{it.label}</p>
-                  <p className="font-medium truncate">{it.value}</p>
-                </div>
+                <it.icon className="h-5 w-5" />
               </a>
             ))}
           </div>
 
-          <div className="flex flex-nowrap items-center gap-4 overflow-x-auto mb-10">
-            <Button asChild size="lg" className="gap-2 glow-primary shrink-0">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
+            <Button asChild size="lg" className="gap-2 glow-primary w-full sm:w-auto">
               <a href={`mailto:${profile.email}`}>
                 <Mail className="h-4 w-4" />
                 {t("contact.sendEmail")}
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="gap-2 hover-glow shrink-0">
+            <Button asChild size="lg" variant="outline" className="gap-2 hover-glow w-full sm:w-auto">
               <a href={`https://wa.me/${profile.whatsapp}`} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="h-4 w-4" />
                 {t("contact.callWhatsapp")}
               </a>
             </Button>
-            <span className="flex items-center gap-2 text-sm text-muted-foreground shrink-0">
+            <span className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
               <MapPin className="h-4 w-4 text-accent" />
               {location}
             </span>

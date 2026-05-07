@@ -13,39 +13,39 @@ export const Hero = () => {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex items-center pt-24 pb-16 bg-hero overflow-hidden"
+      className="relative min-h-screen flex items-center pt-20 sm:pt-24 pb-12 sm:pb-16 bg-hero overflow-hidden"
     >
       <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
 
-      <div className="container grid lg:grid-cols-[1.3fr_1fr] gap-12 items-center relative z-10">
-        <div className="animate-fade-up">
-          <p className="font-mono text-primary mb-4 flex items-center gap-2">
+      <div className="container grid lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-12 items-center relative z-10">
+        <div className="order-2 lg:order-1 animate-fade-up text-center lg:text-left">
+          <p className="font-mono text-sm sm:text-base text-primary mb-3 sm:mb-4 flex items-center justify-center lg:justify-start gap-2">
             <span>{t("hero.greeting")}</span>
             <span className="animate-blink text-accent">_</span>
           </p>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-3 sm:mb-4">
             {profile.name}
           </h1>
 
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gradient mb-5">
+          <h2 className="text-lg sm:text-2xl lg:text-3xl font-semibold text-gradient mb-4 sm:mb-5">
             {role}
           </h2>
 
-          <p className="text-base sm:text-lg text-muted-foreground max-w-xl mb-6">
+          <p className="text-sm sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-5 sm:mb-6">
             {tagline}
           </p>
 
-          <p className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
+          <p className="flex items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm text-muted-foreground mb-6 sm:mb-8">
             <MapPin className="h-4 w-4 text-primary" />
             {location}
           </p>
 
-          <div className="flex flex-wrap gap-3 mb-8">
-            <Button asChild size="lg" className="gap-2 glow-primary">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6 sm:mb-8">
+            <Button asChild size="lg" className="gap-2 glow-primary w-full sm:w-auto">
               <a href="#projetos">{t("hero.viewProjects")}</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="gap-2 hover-glow">
+            <Button asChild size="lg" variant="outline" className="gap-2 hover-glow w-full sm:w-auto">
               <a href={profile.cvPath} download>
                 <Download className="h-4 w-4" />
                 {t("hero.downloadCv")}
@@ -53,7 +53,7 @@ export const Hero = () => {
             </Button>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center justify-center lg:justify-start gap-2">
             <SocialIcon href={profile.github} label="GitHub">
               <Github className="h-5 w-5" />
             </SocialIcon>
@@ -72,7 +72,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="relative flex justify-center lg:justify-end animate-fade-up">
+        <div className="order-1 lg:order-2 relative flex justify-center lg:justify-end animate-fade-up">
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent blur-2xl opacity-40 animate-float" />
             <div className="relative rounded-full p-1 bg-gradient-to-br from-primary to-accent">
@@ -81,10 +81,10 @@ export const Hero = () => {
                 alt="Foto de Albert Silva de Jesus"
                 width={768}
                 height={768}
-                className="relative rounded-full w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 object-cover bg-background"
+                className="relative rounded-full w-44 h-44 sm:w-72 sm:h-72 lg:w-80 lg:h-80 object-cover bg-background"
               />
             </div>
-            <div className="absolute -bottom-3 -right-3 font-mono text-xs px-3 py-1.5 rounded-full bg-card border border-primary/40 text-primary shadow-card">
+            <div className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 font-mono text-[10px] sm:text-xs px-2 py-1 sm:px-3 sm:py-1.5 rounded-full bg-card border border-primary/40 text-primary shadow-card">
               {'{ status: "open to work" }'}
             </div>
           </div>

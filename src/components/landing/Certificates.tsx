@@ -19,7 +19,7 @@ export const Certificates = () => {
     level === "Intermediário" ? t("language.level.intermediate") : level;
 
   return (
-    <section id="certificados" className="py-24 bg-secondary/20">
+    <section id="certificados" className="py-16 sm:py-24 bg-secondary/20">
       <div className="container">
         <SectionHeader
           index="06"

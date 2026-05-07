@@ -124,7 +124,7 @@ export const ContactFormWhatsapp = () => {
   };
 
   return (
-    <div className="bg-card-gradient border border-border rounded-xl p-6 shadow-card">
+    <div className="bg-card-gradient border border-border rounded-xl p-4 sm:p-6 shadow-card">
       <div className="flex items-center gap-2 mb-5">
         <span className="font-mono text-sm text-primary">{">"}</span>
         <h3 className="font-mono text-sm text-muted-foreground">
@@ -157,7 +157,7 @@ export const ContactFormWhatsapp = () => {
                   role="combobox"
                   aria-expanded={countryOpen}
                   aria-label={t("contact.form.country")}
-                  className="w-[140px] shrink-0 justify-between font-normal"
+                  className="w-[110px] sm:w-[140px] shrink-0 justify-between font-normal px-2 sm:px-3"
                 >
                   {selectedCountry ? (
                     <span className="flex items-center gap-1.5 truncate">

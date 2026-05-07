@@ -13,7 +13,7 @@ export const Projects = () => {
       : p,
   );
   return (
-    <section id="projetos" className="py-24">
+    <section id="projetos" className="py-16 sm:py-24">
       <div className="container">
         <SectionHeader index="03" title={t("projects.title")} subtitle={t("projects.subtitle")} />
 
