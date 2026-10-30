@@ -9,9 +9,9 @@ export const Experience = () => {
   const { t, language } = useLanguage();
   const data = language === "en" ? experiencesEn : experiences;
   return (
-    <section id="experiencia" className="py-16 sm:py-24 bg-secondary/20">
+    <section id="experiencia" className="py-16 sm:py-24">
       <div className="container">
-        <SectionHeader index="02" title={t("experience.title")} subtitle={t("experience.subtitle")} />
+        <SectionHeader index="03" title={t("experience.title")} subtitle={t("experience.subtitle")} />
 
         <div className="relative">
           <div className="absolute left-3 sm:left-6 top-2 bottom-2 w-px bg-gradient-to-b from-primary via-accent to-transparent" />

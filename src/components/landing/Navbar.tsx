@@ -13,8 +13,8 @@ export const Navbar = () => {
 
   const links = [
     { href: "#sobre", label: t("nav.about") },
-    { href: "#experiencia", label: t("nav.experience") },
     { href: "#projetos", label: t("nav.projects") },
+    { href: "#experiencia", label: t("nav.experience") },
     { href: "#skills", label: t("nav.skills") },
     { href: "#formacao", label: t("nav.education") },
     { href: "#certificados", label: t("nav.certificates") },

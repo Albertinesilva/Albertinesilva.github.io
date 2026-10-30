@@ -4,10 +4,10 @@ import {
   TestTube2,
   Layout,
   Wrench,
-  Globe,
+  ShieldCheck,
   Users,
   MonitorSmartphone,
-  Sparkles,
+  Boxes,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { skills } from "@/data/portfolio";
@@ -16,13 +16,13 @@ import { useLanguage, type TranslationKey } from "@/hooks/use-language";
 
 const iconFor = (cat: string) => {
   if (cat.includes("Backend")) return Code2;
+  if (cat.includes("Segurança")) return ShieldCheck;
   if (cat.includes("Banco")) return Database;
   if (cat.includes("Testes")) return TestTube2;
   if (cat.includes("Frontend")) return Layout;
   if (cat.includes("IDEs")) return MonitorSmartphone;
-  if (cat.includes("Explorando")) return Sparkles;
   if (cat.includes("Ferramentas")) return Wrench;
-  if (cat.includes("Integrações")) return Globe;
+  if (cat.includes("Outras")) return Boxes;
   return Users;
 };
 
@@ -71,18 +71,20 @@ const deviconMap: Record<string, string> = {
   "VS Code": "devicon-vscode-plain colored",
   "Astah UML": "devicon-java-plain colored",
 
-  // Ferramentas & Outros
-  JasperReports: "devicon-java-plain colored",
-  "Node.js": "devicon-nodejs-plain colored",
-  MongoDB: "devicon-mongodb-plain colored",
+  // Segurança & Documentação de API
+  "Spring Authorization Server": "devicon-spring-plain colored",
+  "SpringDoc OpenAPI / Swagger": "devicon-swagger-plain colored",
+
+  // Ferramentas
+  "JasperReports / Jaspersoft Studio": "devicon-java-plain colored",
   Maven: "devicon-apache-plain colored",
   Heroku: "devicon-heroku-plain colored",
   Git: "devicon-git-plain colored",
   GitHub: "devicon-github-original",
 
-  // Integrações Externas
-  "Google Maps API": "devicon-googlecloud-plain colored",
-  ViaCEP: "devicon-javascript-plain colored",
+  // Outras linguagens e tecnologias
+  "Node.js": "devicon-nodejs-plain colored",
+  MongoDB: "devicon-mongodb-plain colored",
 };
 
 export const Skills = () => {

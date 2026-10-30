@@ -16,7 +16,7 @@ export const Certificates = () => {
         : name;
 
   const langLevel = (level: string) =>
-    level === "Intermediário" ? t("language.level.intermediate") : level;
+    level === "Básico (leitura técnica)" ? t("language.level.basic") : level;
 
   return (
     <section id="certificados" className="py-16 sm:py-24 bg-secondary/20">

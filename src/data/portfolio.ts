@@ -9,45 +9,36 @@ export const profile = {
   whatsapp: "5571999465742",
   linkedin: "https://www.linkedin.com/in/albert-backend-java-spring-boot/",
   github: "https://github.com/Albertinesilva",
-  cvPath: "/curriculo.pdf",
+  cvPath: "/Albert-Silva-Curriculo.pdf",
 };
 
 export const about = {
   paragraphs: [
-    "Formado em Análise e Desenvolvimento de Sistemas pelo IFBA, sou desenvolvedor com foco em Backend Java e na construção de APIs REST seguras, escaláveis e de alta performance.",
-    "Tenho experiência prática em projetos reais com Spring Boot, JPA/Hibernate, PostgreSQL e integração entre sistemas, aplicando boas práticas como Clean Code, SOLID e arquitetura em camadas.",
+    "Sou desenvolvedor Backend Java, formado em Análise e Desenvolvimento de Sistemas pelo IFBA, com foco em APIs REST com Spring Boot, Spring Security (OAuth2/JWT), JPA/Hibernate e PostgreSQL.",
+    "Desenvolvo projetos reais há cerca de 4 anos, entre estágio, residência e projetos próprios: o CAD-MOTOTAXISTA, sistema que criei no estágio na SMTT de Santo Antônio de Jesus, testado e validado pela secretaria e apresentado como meu TCC, com implantação prevista após a aprovação de uma lei municipal em tramitação; a Residência de Software TIC18 (CEPEDI), com 2.070 horas e atuação como líder técnico em um projeto de e-commerce; o ASJCatalog, API em Java/Spring Boot com autenticação OAuth2/JWT, ciclo de vida completo da conta e mais de 450 testes automatizados, que evoluo em capítulos documentados; e os projetos práticos do IFBA.",
     "Acredito que desenvolver software vai além de escrever código: envolve compreender o impacto das decisões técnicas, buscar melhoria contínua e atuar de forma proativa na resolução de problemas.",
   ],
+  // labelKey aponta para as traduções em src/hooks/use-language.tsx; valueEn só quando o número muda no inglês
   highlights: [
-    { value: "3+", label: "anos de experiência prática" },
-    { value: "2.070h", label: "Residência em Software (CEPEDI)" },
-    { value: "ADS", label: "Formado pelo IFBA" },
+    { value: "~4", labelKey: "about.highlight.years" },
+    { value: "2.070h", valueEn: "2,070h", labelKey: "about.highlight.residency" },
+    { value: "450+", labelKey: "about.highlight.tests" },
+    { value: "ADS", labelKey: "about.highlight.degree" },
   ],
 };
 
 export const experiences = [
   {
-    period: "Jan/2025 — atual",
-    role: "Desenvolvedor de Software",
-    company: "Projeto Agro Familiar — Incubadora INETI",
-    bullets: [
-      "Desenvolvimento de portal web para conexão entre produtores e consumidores",
-      "Construção de interfaces com React e consumo de APIs REST",
-      "Integração com backend e organização de componentes",
-    ],
-    stack: ["React", "JavaScript", "APIs REST", "Node.js", "MongoDB", "Git", "GitHub"],
-  },
-  {
     period: "Jun/2023 — Dez/2024",
     role: "Residente de Software",
-    company: "CEPEDI",
+    company: "CEPEDI — Residência de Software TIC18",
     bullets: [
       "Sistema Edrive-Navigator: planejamento inteligente para veículos elétricos",
       "Criação de APIs REST com Spring Boot, JPA, Spring Security e Flyway",
       "Integração com APIs externas (Google Maps e ViaCEP)",
-      "Testes com JUnit, Mockito, Postman e Insomnia",
+      "Testes automatizados com JUnit, Mockito, Postman e Insomnia",
       "Geração de relatórios com JasperReports",
-      "Líder técnico em projeto de e-commerce (arquitetura e acompanhamento de entregas)",
+      "Atuação como líder técnico em projeto de e-commerce, definindo arquitetura e acompanhando entregas",
       "Frontend com Angular (componentes, serviços e consumo de APIs)",
     ],
     stack: [
@@ -64,20 +55,26 @@ export const experiences = [
       "Flyway",
       "JUnit",
       "Mockito",
+      "Postman",
+      "Insomnia",
       "JasperReports",
+      "APIs REST",
+      "Git",
+      "GitHub",
       "Scrum",
     ],
   },
   {
     period: "Set/2022 — Set/2023",
     role: "Estagiário de Tecnologia da Informação",
-    company: "Prefeitura Municipal de Santo Antônio de Jesus",
+    company: "SMTT - Secretaria Municipal de Trânsito e Transporte de Santo Antônio de Jesus",
     bullets: [
-      "Sistema CAD-MOTOTAXISTA (TCC) aplicado à gestão pública",
-      "Cadastro, controle de regularidade, emissão de alvarás com QR Code e relatórios",
+      "Sistema CAD-MOTOTAXISTA (TCC) para a gestão pública, testado e validado pela SMTT durante o estágio, com implantação prevista após a aprovação de lei municipal em tramitação",
+      "Aplicação web monolítica server-side, no padrão MVC em camadas, com Spring Boot e renderização de páginas via Thymeleaf",
+      "Cadastro, controle de regularidade, emissão de alvarás com QR Code (ZXing) e relatórios",
       "Backend com Spring Boot, JPA e Spring Security",
       "Integração com API ViaCEP e versionamento de banco com Flyway",
-      "Testes automatizados com JUnit e Mockito",
+      "Testes automatizados com JUnit e Mockito, cobertura com JaCoCo e testes de performance com Apache JMeter",
       "Deploy em ambiente cloud (Heroku)",
     ],
     stack: [
@@ -88,21 +85,97 @@ export const experiences = [
       "Hibernate",
       "Spring Security",
       "Thymeleaf",
+      "Lombok",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "jQuery",
+      "DataTables",
       "Bootstrap",
       "PostgreSQL",
       "H2",
       "Flyway",
       "JUnit",
       "Mockito",
+      "JaCoCo",
+      "Apache JMeter",
       "JasperReports",
+      "ZXing",
+      "APIs REST",
       "Maven",
       "Heroku",
     ],
   },
+  {
+    period: "Jan/2025 — atual",
+    role: "Desenvolvedor de Software",
+    company: "Projeto Agro Familiar — Incubadora INETI",
+    bullets: [
+      "Desenvolvimento de portal web para conexão entre produtores e consumidores",
+      "Construção de interfaces com React e consumo de APIs REST",
+      "Integração com backend e organização de componentes",
+    ],
+    stack: ["React", "JavaScript", "APIs REST", "Node.js", "MongoDB", "Git", "GitHub"],
+  },
 ];
 
+// O id liga cada projeto à sua tradução em src/data/portfolio-en.ts
 export const projects = [
   {
+    id: "asjcatalog-backend",
+    title: "ASJCatalog — Backend",
+    description:
+      "API REST de catálogo de produtos com funcionalidades comuns em sistemas corporativos: ciclo de vida completo da conta (cadastro, ativação por e-mail, recuperação e redefinição de senha), autenticação OAuth2/JWT com controle de acesso por papéis, regras de negócio no domínio e listagens otimizadas sem N+1. Mais de 450 testes automatizados, com build e testes no GitHub Actions a cada push.",
+    next: "limite mínimo de cobertura com JaCoCo (em andamento), Docker e hospedagem da API.",
+    stack: [
+      "Java 17",
+      "Spring Boot 3.5",
+      "Spring Security",
+      "OAuth2",
+      "JWT",
+      "Spring Data JPA",
+      "PostgreSQL",
+      "Flyway",
+      "JUnit 5",
+      "Mockito",
+      "JaCoCo",
+      "Swagger",
+    ],
+    github: "https://github.com/Albertinesilva/backend-engineering-journey-java-springboot",
+    featured: true,
+  },
+  {
+    id: "asjcatalog-frontend",
+    title: "ASJCatalog — Frontend",
+    description:
+      "SPA que consome a API do ASJCatalog: catálogo público com busca e filtros, painel administrativo de produtos, categorias e usuários, login com renovação automática da sessão, fluxos de conta e telas de acordo com o perfil do usuário, em três idiomas.",
+    next: "integração com a API depois da hospedagem do backend.",
+    stack: ["React", "TypeScript", "Vite", "React Router", "Axios", "Tailwind CSS", "i18next"],
+    github: "https://github.com/Albertinesilva/asjcatalog-frontend",
+    featured: true,
+  },
+  {
+    id: "cad-mototaxista",
+    title: "CAD-MOTOTAXISTA",
+    description:
+      "Projeto do estágio na SMTT e meu TCC. Sistema web de gestão de mototaxistas: cadastro, controle de regularidade, emissão de alvarás com QR Code (ZXing) e relatórios (JasperReports). Testado e validado pela SMTT durante o estágio, com implantação prevista após a aprovação de lei municipal em tramitação. Monolito MVC em camadas com Spring Boot e Thymeleaf, testes com JUnit e Mockito, cobertura com JaCoCo e testes de performance com JMeter.",
+    stack: [
+      "Java",
+      "Spring Boot",
+      "Spring MVC",
+      "Spring Security",
+      "Thymeleaf",
+      "PostgreSQL",
+      "Flyway",
+      "JasperReports",
+      "Heroku",
+    ],
+    github: "https://github.com/Albertinesilva/cad-mototaxista-technical-documentation",
+    demo: "https://cad-mototaxistas.herokuapp.com/",
+    featured: true,
+  },
+  {
+    id: "edrive-navigator",
     title: "Edrive-Navigator",
     description:
       "Sistema de planejamento inteligente para veículos elétricos. Backend completo em Spring Boot com integrações Google Maps e ViaCEP, autenticação com Spring Security e relatórios em JasperReports.",
@@ -112,24 +185,7 @@ export const projects = [
     featured: true,
   },
   {
-    title: "CAD-MOTOTAXISTA",
-    description:
-      "TCC. Sistema web de gestão de mototaxistas para a Prefeitura Municipal, com cadastro, controle de regularidade, emissão de alvarás via QR Code e geração de relatórios. Documentação técnica com link de acesso ao sistema em produção.",
-    stack: ["Java", "Spring Boot", "Spring MVC", "Thymeleaf", "PostgreSQL", "Heroku"],
-    github: "https://github.com/Albertinesilva/cad-mototaxista-technical-documentation",
-    featured: true,
-    hasDeploy: true,
-  },
-  {
-    title: "Portal Agro Familiar",
-    description:
-      "Plataforma desenvolvida na Incubadora INETI conectando produtores e consumidores. Frontend em React consumindo APIs REST e integração com backend Node.js. (Repositório privado)",
-    stack: ["React", "JavaScript", "Node.js", "MongoDB", "APIs REST"],
-    github: "https://github.com/Albertinesilva",
-    featured: true,
-    isPrivate: true,
-  },
-  {
+    id: "iot-backend",
     title: "Backend IoT — Agricultura Inteligente",
     description:
       "Projeto acadêmico (Tópicos Avançados em Web I). Backend Spring Boot para monitoramento de sensores agrícolas (temperatura, umidade, luminosidade) com simulação e integração real via MQTT e AMQP/RabbitMQ. Arquitetura Edge/Fog/Cloud, autenticação JWT e integração com OpenWeatherMap.",
@@ -138,6 +194,7 @@ export const projects = [
     featured: true,
   },
   {
+    id: "smart-parking",
     title: "Smart Parking IoT",
     description:
       "Projeto acadêmico (Programação Web Avançada). Sistema de estacionamento inteligente com reserva de vagas em tempo real. Backend Spring Boot com JWT, Flyway e PostgreSQL; frontend React + TypeScript. Documentação interativa via Swagger/OpenAPI.",
@@ -146,22 +203,34 @@ export const projects = [
     featured: true,
   },
   {
-    title: "DSMovie — Full Stack Spring Boot + React",
-    description:
-      "Aplicação full-stack responsiva para avaliação de filmes (Semana DevSuperior #sds6). Monorepo com backend Spring Boot (API REST, JPA, Spring Security) e frontend ReactJS + TypeScript com Apex Charts e Axios. Deploy do backend no Heroku e frontend no Netlify.",
-    stack: ["Java", "Spring Boot", "React", "TypeScript", "PostgreSQL", "Bootstrap", "Heroku", "Netlify"],
-    github: "https://github.com/Albertinesilva/dsmovie",
-    featured: true,
-    hasDeploy: true,
-  },
-  {
+    id: "clinica",
     title: "Clínica — Spring Security & Thymeleaf",
     description:
       "Sistema web de agendamento de consultas desenvolvido em curso (Marcio Ballem) com foco em Spring Security. Autenticação e autorização por perfis, confirmação de cadastro e recuperação de senha por e-mail, restrição de logins simultâneos e Remember Me. Deploy em produção no Heroku.",
     stack: ["Java", "Spring Boot", "Spring Security", "Spring MVC", "Thymeleaf", "JPA", "MySQL", "Heroku"],
     github: "https://github.com/Albertinesilva/appointment-scheduling-spring-security",
+    demo: "https://clinica-spring-security-b074f1332545.herokuapp.com/",
     featured: true,
-    hasDeploy: true,
+  },
+  {
+    id: "dsmovie",
+    title: "DSMovie — Full Stack Spring Boot + React",
+    description:
+      "Aplicação full-stack responsiva para avaliação de filmes (Semana DevSuperior #sds6). Monorepo com backend Spring Boot (API REST, JPA, Spring Security) e frontend ReactJS + TypeScript com Apex Charts e Axios. Deploy do backend no Heroku e frontend no Netlify.",
+    stack: ["Java", "Spring Boot", "React", "TypeScript", "PostgreSQL", "Bootstrap", "Heroku", "Netlify"],
+    github: "https://github.com/Albertinesilva/dsmovie",
+    demo: "https://dsmovie-portfolio.netlify.app/",
+    featured: true,
+  },
+  {
+    id: "agro-familiar",
+    title: "Portal Agro Familiar",
+    description:
+      "Plataforma desenvolvida na Incubadora INETI conectando produtores e consumidores. Frontend em React consumindo APIs REST e integração com backend Node.js. (Repositório privado)",
+    stack: ["React", "JavaScript", "Node.js", "MongoDB", "APIs REST"],
+    github: "https://github.com/Albertinesilva",
+    featured: true,
+    isPrivate: true,
   },
 ];
 
@@ -175,11 +244,16 @@ export const skills = [
       "Spring Data JPA",
       "Hibernate",
       "Spring Security",
-      "JavaMailSender",
       "APIs REST",
-      "C",
-      "C++",
+      "Lombok",
+      "Bean Validation",
+      "Thymeleaf",
+      "JavaMailSender",
     ],
+  },
+  {
+    category: "Segurança & Documentação de API",
+    items: ["OAuth2", "JWT", "Spring Authorization Server", "SpringDoc OpenAPI / Swagger"],
   },
   {
     category: "Banco de Dados",
@@ -187,27 +261,19 @@ export const skills = [
   },
   {
     category: "Testes & Qualidade",
-    items: ["JUnit", "Mockito", "JaCoCo", "Postman", "Insomnia"],
+    items: ["JUnit", "Mockito", "JaCoCo", "Apache JMeter", "Postman", "Insomnia"],
   },
   {
-    category: "Frontend (em evolução)",
-    items: ["Angular", "TypeScript", "React", "JavaScript", "Thymeleaf", "HTML", "CSS", "Bootstrap"],
+    category: "Ferramentas",
+    items: ["Maven", "Git", "GitHub", "JasperReports / Jaspersoft Studio", "Heroku"],
   },
   {
     category: "IDEs & Modelagem",
     items: ["IntelliJ IDEA", "Eclipse", "VS Code", "Astah UML"],
   },
   {
-    category: "Explorando & Aprendendo",
-    items: ["Python", "C#", "MongoDB", "Node.js"],
-  },
-  {
-    category: "Ferramentas & Outros",
-    items: ["JasperReports", "Node.js", "MongoDB", "Maven", "Heroku", "Git", "GitHub"],
-  },
-  {
-    category: "Integrações Externas",
-    items: ["Google Maps API", "ViaCEP"],
+    category: "Frontend (complementar)",
+    items: ["Angular", "React", "TypeScript", "JavaScript", "HTML", "CSS", "Bootstrap"],
   },
   {
     category: "Práticas & Soft Skills",
@@ -221,6 +287,10 @@ export const skills = [
       "Trabalho em equipe",
     ],
   },
+  {
+    category: "Outras linguagens e tecnologias",
+    items: ["C", "C++", "Python", "C#", "Node.js", "MongoDB"],
+  },
 ];
 
 export const education = {
@@ -228,7 +298,7 @@ export const education = {
   institution: "IFBA — Instituto Federal de Educação, Ciência e Tecnologia da Bahia",
   conclusion: "Concluído em Março/2026",
   status: "Formado",
-  tcc: "TCC: Sistema CAD-MOTOTAXISTA — aplicação web desenvolvida para a gestão de mototaxistas, com repositório, documentação técnica completa e ambiente de produção disponíveis no GitHub.",
+  tcc: "TCC: Sistema CAD-MOTOTAXISTA — aplicação web desenvolvida para a gestão de mototaxistas, com repositório e documentação técnica completa no GitHub e versão hospedada e disponível online.",
   tccLink: "https://github.com/Albertinesilva/cad-mototaxista-technical-documentation",
   tccLinkLabel: "Ver documentação no GitHub",
 };
@@ -245,5 +315,5 @@ export const certificates = [
 
 export const languages = [
   { name: "Português", level: "", percentage: 100 },
-  { name: "Inglês", level: "Intermediário", percentage: 60 },
+  { name: "Inglês", level: "Básico (leitura técnica)", percentage: 30 },
 ];

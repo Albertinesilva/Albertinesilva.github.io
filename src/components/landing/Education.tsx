@@ -13,7 +13,7 @@ export const Education = () => {
           degree: "Technologist in Systems Analysis and Development",
           institution: "IFBA — Federal Institute of Education, Science and Technology of Bahia",
           conclusion: "Completed in March/2026",
-          tcc: "Final project: CAD-MOTOTAXISTA — a web application built for managing motorcycle taxi drivers, with repository, full technical documentation and production environment available on GitHub.",
+          tcc: "Final project: CAD-MOTOTAXISTA — a web application built for managing motorcycle taxi drivers, with repository and full technical documentation on GitHub, and a hosted version available online.",
           tccLinkLabel: "View documentation on GitHub",
         }
       : {

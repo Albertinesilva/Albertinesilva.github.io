@@ -1,23 +1,12 @@
 import { about } from "@/data/portfolio";
+import { aboutEn } from "@/data/portfolio-en";
 import { SectionHeader } from "./SectionHeader";
-import { useLanguage } from "@/hooks/use-language";
+import { useLanguage, type TranslationKey } from "@/hooks/use-language";
 
 export const About = () => {
   const { t, language } = useLanguage();
 
-  const paragraphsEn = [
-    "Graduated in Systems Analysis and Development from IFBA, I'm a developer focused on Java Backend and on building secure, scalable and high-performance REST APIs.",
-    "I have practical experience on real projects with Spring Boot, JPA/Hibernate, PostgreSQL and system integration, applying best practices like Clean Code, SOLID and layered architecture.",
-    "I believe building software goes beyond writing code: it involves understanding the impact of technical decisions, pursuing continuous improvement and acting proactively to solve problems.",
-  ];
-
-  const paragraphs = language === "en" ? paragraphsEn : about.paragraphs;
-
-  const highlightLabels: Record<string, string> = {
-    "anos de experiência prática": t("about.highlight.years"),
-    "Residência em Software (CEPEDI)": t("about.highlight.residency"),
-    "Formado pelo IFBA": t("about.highlight.degree"),
-  };
+  const paragraphs = language === "en" ? aboutEn.paragraphs : about.paragraphs;
 
   return (
     <section id="sobre" className="py-16 sm:py-24 relative">
@@ -35,15 +24,17 @@ export const About = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
             {about.highlights.map((h) => (
               <div
-                key={h.label}
+                key={h.labelKey}
                 className="bg-card-gradient border border-border rounded-xl p-5 hover-glow transition-smooth"
               >
-                <div className="text-3xl font-bold text-gradient font-mono">{h.value}</div>
+                <div className="text-3xl font-bold text-gradient font-mono">
+                  {language === "en" && "valueEn" in h ? h.valueEn : h.value}
+                </div>
                 <div className="text-sm text-muted-foreground mt-1">
-                  {highlightLabels[h.label] ?? h.label}
+                  {t(h.labelKey as TranslationKey)}
                 </div>
               </div>
             ))}
