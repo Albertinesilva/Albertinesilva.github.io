@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Documentação local de trabalho com o Claude Code (não versionar)
+CLAUDE.md

@@ -1,0 +1,56 @@
+# Publica o site no GitHub Pages (https://albertinesilva.github.io/) a cada push na main.
+# Roda em paralelo ao deploy da Netlify, que continua independente.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # permite rodar manualmente pela aba Actions
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Só um deploy por vez; um push novo cancela o deploy anterior que ainda estiver na fila
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # Fallback de SPA: o GitHub Pages serve 404.html para qualquer caminho inexistente,
+      # então o React Router assume a rota em vez de aparecer o 404 do GitHub.
+      - name: Criar 404.html
+        run: cp dist/index.html dist/404.html
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

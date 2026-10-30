@@ -27,6 +27,15 @@ interface Country {
   dial: string; // e.g. "+55"
 }
 
+// Formato (parcial) da resposta da API restcountries.com
+interface RestCountry {
+  cca2?: string;
+  name?: { common?: string };
+  idd?: { root?: string; suffixes?: string[] };
+  flag?: string;
+  translations?: { por?: { common?: string } };
+}
+
 export const ContactFormWhatsapp = () => {
   const { t, language } = useLanguage();
   const { toast } = useToast();
@@ -43,7 +52,7 @@ export const ContactFormWhatsapp = () => {
     let cancelled = false;
     fetch("https://restcountries.com/v3.1/all?fields=cca2,name,idd,flag,translations")
       .then((r) => r.json())
-      .then((data: any[]) => {
+      .then((data: RestCountry[]) => {
         if (cancelled || !Array.isArray(data)) return;
         const list: Country[] = data
           .map((c) => {

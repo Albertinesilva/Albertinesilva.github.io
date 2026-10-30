@@ -1,0 +1,12 @@
+# Configuração de build da Netlify (espelho: https://albert-portfolio-dev.netlify.app/).
+# Este arquivo tem prioridade sobre o painel (Site configuration → Build & deploy).
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Fallback de SPA: qualquer caminho desconhecido entrega o index.html e o React Router decide.
+# Arquivos que existem (assets, curriculo.pdf, favicon) continuam sendo servidos normalmente.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
